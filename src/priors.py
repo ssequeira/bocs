@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 
+
 import pyro
 import pyro.distributions as dist
 import pyro.poutine as poutine
@@ -28,6 +29,3 @@ class DiagonalGaussian(Prior):
 
     def _sample(self, *args, **kwargs):
         return dist.Normal(0., self.scale).sample()
-
-
-    
